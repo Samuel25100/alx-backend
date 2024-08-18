@@ -24,12 +24,12 @@ class Server:
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """return list of list from dataset based on start and end"""
-        start: int = ((page - 1) * page_size)
-        end: int = start + page_size
         assert isinstance(page, int)
         assert isinstance(page_size, int)
         assert page > 0
         assert page_size > 0
+        start: int = ((page - 1) * page_size)
+        end: int = start + page_size
         result: List[List[str]] = self.dataset()
         length = len(result)
         if (start > length or end > length):
