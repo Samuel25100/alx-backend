@@ -26,10 +26,10 @@ class Server:
         """return list of list from dataset based on start and end"""
         start: int = ((page - 1) * page_size)
         end: int = start + page_size
-        assert page > 0
-        assert page_size > 0
         assert isinstance(page, int)
         assert isinstance(page_size, int)
+        assert page > 0
+        assert page_size > 0
         result: List[List[str]] = self.dataset()
         length = len(result)
         if (start > length or end > length):
