@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+"""class: Server"""
 import csv
 import math
 from typing import List, Tuple
@@ -31,10 +33,8 @@ class Server:
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """return list of list from dataset based on start and end"""
-        assert isinstance(page, int)
-        assert isinstance(page_size, int)
-        assert page > 0
-        assert page_size > 0
+        assert isinstance(page, int) and isinstance(page_size, int)
+        assert page > 0 and page_size > 0
         result: List[List[str]] = self.dataset()
         index = index_range(page, page_size)
         length = len(result)
