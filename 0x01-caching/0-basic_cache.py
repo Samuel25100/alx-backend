@@ -1,14 +1,10 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """"class: BasicCache"""
 from base_caching import BaseCaching
 
 
 class BasicCache(BaseCaching):
     """have put and get method for caching"""
-
-    """def __init__(self):
-        "constructor"
-        super(cache_data)"""
 
     def put(self, key, item):
         """puts cached data as key and items in cached_data"""

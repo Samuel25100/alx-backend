@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """class: FIFOCache"""
 from base_caching import BaseCaching
 
@@ -16,6 +16,10 @@ class FIFOCache(BaseCaching):
         if (key or item):
             self.cache_data[key] = item
             if (key not in self.fifo):
+                self.fifo.append(key)
+            else:
+                index = self.fifo.index(key)
+                self.fifo.pop(index)
                 self.fifo.append(key)
             if (len(self.fifo) == (BaseCaching.MAX_ITEMS) + 1):
                 old = self.fifo.pop(0)
