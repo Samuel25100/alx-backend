@@ -22,7 +22,12 @@ def get_locale():
     loc = request.args.get('locale')
     if loc in Config.LANGUAGES:
         return loc
-    return request.accept_languages.best_match(Config.LANGUAGES)
+    elif g.user is not None and g.user["locale"] in Config.LANGUAGES:
+        return g.user["locale"]
+    elif request.accept_languages.best_match(Config.LANGUAGES):
+        return request.accept_languages.best_match(Config.LANGUAGES)
+    else:
+        return Config.BABEL_DEFAULT_LOCALE
 
 
 def get_user(id):
