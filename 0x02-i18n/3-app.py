@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """app server for flask"""
 from flask import Flask, render_template, request
-from flask_babel import Babel, gettext
+from flask_babel import Babel, gettext as _
 
 
 class Config:
