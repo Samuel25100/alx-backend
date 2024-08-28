@@ -6,9 +6,9 @@
         </title>
 	<h1>{{gettext('home_header')}}</h1>
 	{% if username != None%}
-        	<h2>{{gettext('logged_in_as', username=username)}}</h2>
+        	<p>{{gettext('logged_in_as', username=username)}}</p>
 	{% else %}
-		<h2>{{gettext('not_logged_in')}}</h2>
+		<p>{{gettext('not_logged_in')}}</p>
 	{% endif %}
     </body>
 </html>
