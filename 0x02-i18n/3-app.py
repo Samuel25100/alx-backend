@@ -24,7 +24,7 @@ def get_locale():
 
 @app.route('/')
 def index():
-    """main default route"""
+    """main default route, gettext will parameterize our templates"""
     return render_template('3-index.html')
 
 
